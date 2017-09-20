@@ -50,7 +50,7 @@ In order to work the table needs data in form of array of basic JS object or in 
     "name": "Ervin Howell",
     "email": "Shanna@melissa.tv"
   }
- ]
+]
  ```
  
  ### Definition
