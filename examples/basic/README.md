@@ -1,6 +1,6 @@
-# basic
+# Basic example
 
-> modular-table example project
+Example with basic functionality for Vue-modular-table
 
 ## Build Setup
 
