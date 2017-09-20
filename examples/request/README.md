@@ -1,6 +1,6 @@
-# request
+# Request
 
-> Example of vue-modular-table with request with axios.
+Example of vue-modular-table with axios request from dummy API.
 
 ## Build Setup
 
