@@ -4,5 +4,15 @@ Vue-modular-table is a Vue component, which we built due to the lack of the func
 
 Vue-modular-table does not use **jQuery** or any other extensive libraries. It works with **Vue2 **and its only dependency is **es5-dot-prop**. It is made to easily work with **Vuex. **The table does not provide built-in CSS, but it provides several ways to add your own styling to it.**  **
 
-![](/assets/VueModularTableIntro.png)You can see examples of how to use the table at // TODO insert link here.
+![](/assets/VueModularTableIntro.png)
+
+## Installation
+
+#### Using yarn
+
+`yarn add data-table-ec`
+
+#### Using npm
+
+`npm i --save data-table-ec`
 
