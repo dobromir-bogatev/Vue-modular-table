@@ -1,7 +1,7 @@
 {
   "name": "vue-modular-table",
   "version": "0.0.1",
-  "description": "Data table from eCollect with Vue2 and no jQuery",
+  "description": "Vue2 implementation of data table without jQuery.",
   "author": "eCollect",
   "main": "dist/modular-table.js",
   "license": "MIT",
@@ -16,9 +16,16 @@
   "files": [
     "dist/"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eCollect/vue-modular-table.git"
+  },
   "keywords": [
     "vue",
-    "component"
+    "vue2",
+    "component",
+    "table",
+    "datatable"
   ],
   "dependencies": {
     "es5-dot-prop": "^4.1.1"
