@@ -6,12 +6,14 @@
   "main": "dist/modular-table.js",
   "license": "MIT",
   "scripts": {
+    "dev": "vue build ./src/demo.vue --config ./build.config.js",
+    "demo:open": "open 'http://localhost:3000/'; serve ./demo/",
     "dist": "vue build ./src/index.js --config ./build.config.js --dist ./dist/ --prod --lib vue-modular-table",
     "dist:demo": "vue build ./src/demo.vue --config ./build.config.js --dist ./demo/ --prod",
+    "docs": "gitbook build ./gitbook ./docs",
+    "docs:serve": "gitbook serve ./gitbook ./docs",
     "build": "npm run dist -- --disable-compress",
-    "start": "npm run dev",
-    "dev": "vue build ./src/demo.vue --config ./build.config.js",
-    "demo:open": "open 'http://localhost:3000/'; serve ./demo/"
+    "start": "npm run dev"
   },
   "files": [
     "dist/"
