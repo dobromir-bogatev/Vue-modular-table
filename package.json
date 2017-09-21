@@ -1,6 +1,6 @@
 {
   "name": "vue-modular-table",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Vue2 implementation of data table without jQuery.",
   "author": "eCollect",
   "main": "dist/vue-modular-table.js",
@@ -22,7 +22,8 @@
     "url": "https://github.com/eCollect/vue-modular-table/issues"
   },
   "homepage": "https://github.com/eCollect/vue-modular-table",
-  "repository": "git@github.com:posva/vuejs-plugin-template.git",
+  "repository": "git@github.com:eCollect/vue-modular-table.git",
+  "readme": "README.md",
   "keywords": [
     "vue",
     "vue2",
