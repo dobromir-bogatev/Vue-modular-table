@@ -8,11 +8,11 @@ Flexible and covenient data table with Vue2 and no jquery
 
 ### Using yarn
 
-`yarn add data-table-ec`
+`yarn add vue-modular-table`
 
 ### Using npm
 
-`npm i --save data-table-ec`
+`npm i --save vue-modular-table`
 
 ## Quick setup 
 
