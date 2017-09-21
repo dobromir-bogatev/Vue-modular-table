@@ -16,8 +16,7 @@
     "start": "npm run dev"
   },
   "files": [
-    "dist/",
-    "README.md"
+    "dist/"
   ],
   "repository": {
     "type": "git",
