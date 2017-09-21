@@ -1,6 +1,6 @@
 {
   "name": "vue-modular-table",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Vue2 implementation of data table without jQuery.",
   "author": "eCollect",
   "main": "dist/modular-table.js",
