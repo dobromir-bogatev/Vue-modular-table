@@ -14,6 +14,8 @@ Flexible and covenient data table with Vue2 and no jquery
 
 `npm i --save vue-modular-table`
 
+## [Documentation](https://ecollect.github.io/vue-modular-table/)
+
 ## Quick setup 
 
 Import vue-modular-table
