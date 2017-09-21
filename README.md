@@ -1,4 +1,4 @@
-# Vue-modular-table
+# vue-modular-table
 
 Flexible and covenient data table with Vue2 and no jquery
 
@@ -33,7 +33,6 @@ and use it
 ```html
 <modular-table> </modular-table>
 ```
-
 ## Requirements
 
 ### Data
