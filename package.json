@@ -19,6 +19,9 @@
   "directories": {
     "lib": "dist/"
   },
+  "files": [
+    "dist"
+  ],
   "bugs": {
     "url": "https://github.com/eCollect/vue-modular-table/issues"
   },
