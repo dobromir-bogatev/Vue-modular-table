@@ -8,6 +8,7 @@
                                   :key="field.path"
                                   v-if="field.title"
                                   :sorting="sorting"
+                                  :sortIcons="sortIcons"
                                   :field="field"
                                   @modular-table-sort="sortClick">
                     </field-header>
@@ -100,6 +101,10 @@
 				type: Object,
 				default() { return null; },
 			},
+            sortIcons:{
+				type: Object,
+                    default(){ return null;},
+             },
 			definition: {
 				type: TableDefinition,
 				required: true,

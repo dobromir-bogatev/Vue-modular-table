@@ -2,7 +2,7 @@
 	<div @click="sortClick()" v-if="field.sortPath" class="modular-table-sortable">
 		<span v-html="field.formatTitle(field.title)"></span>
 		<template scope="sorting" direction="direction"></template>
-		<sort-icon :field="field" :sorting="sorting"></sort-icon>
+		<sort-icon :field="field" :sorting="sorting" :sortIcons="sortIcons"></sort-icon>
 	</div>
 	<div v-else>
 		<span v-html="field.formatTitle(field.title)"></span>
@@ -25,6 +25,10 @@
 			sorting: {
 				type: Object,
 				default() { return null; },
+			},
+			sortIcons:{
+				type: Object,
+				default(){ return null;},
 			},
 		},
 		computed: {

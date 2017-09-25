@@ -28,7 +28,7 @@
 				requestTableDefinition,
 				loading: false,
 				dummyLoading: false,
-                sorting: null,
+                sorting: null
 			}
 		},
 		methods: {
