@@ -18,11 +18,11 @@ Dont forget that pascal case becomes kebab case when you use it as HTML tag.
 <modular-table> </modular-table>
 ```
 
-The basic properties the table needs to work are **data **and **definition. **
+The basic properties the table needs to work are **data** and **definition**.
 
 ### Data
 
-The data should be an array of objects. The objects can be basic javascript objects or JSON.** **
+The data should be an array of objects. The objects can be basic javascript objects or JSON.
 
 ```js
 let myTableData = [
@@ -62,7 +62,7 @@ let myTableDefinition = new TableDefinition()
         .addField('name', 'Names'))
 ```
 
-This way we will make a table with two columns. Note that even though our data has _email_ as well we didn't add it as a column. The table will just skip it. **addColumn **naturally adds column to our table. In the function call we use arrow function from ES6 to define our column further. **addField **adds a field in each cell of the column. You will usually have one field per cell, but sometimes you may need to combine information to make your table neater. For example if the data had **firstName **and **lastName **instead of just **name **we could combine them in one column. The first property of **addField **is the name of the property we want to display from the data. The second property of **addField** is the title of the column in the header.
+This way we will make a table with two columns. Note that even though our data has _email_ as well we didn't add it as a column. The table will just skip it. **addColumn** naturally adds column to our table. In the function call we use arrow function from ES6 to define our column further. **addField** adds a field in each cell of the column. You will usually have one field per cell, but sometimes you may need to combine information to make your table neater. For example if the data had **firstName** and **lastName** instead of just **name** we could combine them in one column. The first property of **addField** is the name of the property we want to display from the data. The second property of **addField** is the title of the column in the header.
 
 ### Result
 

@@ -12,7 +12,7 @@ The class instance has only one method which is the first step of building our t
 let myTableDefinition = new TableDefinition();
 ```
 
-* **addColumn \(columnConfig\) - **pretty straight forward, it adds a column to our table. Whats more interesting is the column config or more generally the config properties.
+* **addColumn \(columnConfig\)** - pretty straight forward, it adds a column to our table. Whats more interesting is the column config or more generally the config properties.
 
 #### Config properties
 
@@ -28,10 +28,10 @@ myTableDefinition
 
 The table column much like the class instance has only one method.
 
-* **addField\(dataProperty, title, fieldConfig\) - **the method adds a field to every cell in the column and defines the title displayed in the header.
-  * **dataProperty -** The data's property name that you wish to be displayed in this field. It is mandatory.
-  * **title - **The title of your column. It can be anything and it will be displayed as the column header. It is not mandatory. If you leave it empty the header of the column will be empty.
-  * **fieldConfig - **Allows you to further define the field. Read more about the config properties above. 
+* **addField\(dataProperty, title, fieldConfig\)** - the method adds a field to every cell in the column and defines the title displayed in the header.
+  * **dataProperty** - The data's property name that you wish to be displayed in this field. It is mandatory.
+  * **title** - The title of your column. It can be anything and it will be displayed as the column header. It is not mandatory. If you leave it empty the header of the column will be empty.
+  * **fieldConfig** - Allows you to further define the field. Read more about the config properties above.
   * **Function overloads: addField\(dataProperty\), addField\(dataProperty, fieldConfig\)**
 
 You can add multiple fields to a column, which means that you can make columns with combined data. A little trick you can use is  write the title of the column only in the first field in the combination. Lets see an example for clarification.
@@ -48,7 +48,7 @@ myTableDefinition
 
 The table field is the place that we can modify our table the most. When you apply a method on a field, make note that a field figurates in every cell in its column.
 
-* **class\(classList\) - **With this method you can attach your CSS classes. You can can pass them as array or simply with comma.
+* **class\(classList\)** - With this method you can attach your CSS classes. You can can pass them as array or simply with comma.
 
 ```js
 myTableDefinition
@@ -57,7 +57,7 @@ myTableDefinition
             .class('is-primary', 'bg-dark')));
 ```
 
-* **formatter\(formatter\) **and **titleFormatter\(formatter\) -** Through this method you can modify the fields further. You can use regular or arrow function as a formatter. You can add HTML that will render as well. **formatter **will format the fields in the column. **titleFormatter **will format the header of the column.
+* **formatter\(formatter\)** and **titleFormatter\(formatter\)** -  Through this method you can modify the fields further. You can use regular or arrow function as a formatter. You can add HTML that will render as well. **formatter** will format the fields in the column. **titleFormatter** will format the header of the column.
 
 ```js
 myTableDefinition
@@ -68,9 +68,9 @@ myTableDefinition
 
 _Note: We added a small library with general formatters that are used often. Look at the chapter **Formatters **for more information_.
 
-* **nullOrUndefinedDisplayValue\(value\) - **If **null **or **undefined **results appear in your data and you don't want your table to display them just like that, you can set the value for these results. For example _"No information" instead of just _"null".
+* **nullOrUndefinedDisplayValue\(value\)** - If **null** or **undefined** results appear in your data and you don't want your table to display them just like that, you can set the value for these results. For example _"No information"_ instead of just _"null"_.
 
-* **sortable\(\) - **Marks the column as sortable. This will make the header clickable. On click the table will emit Vue event with the name of **"modular-table-sort" **which carries a payload with the info of the sorting in the following format:`{ direction: sortingDirection, field: nameOfTheSortedField }`On the first click the direction is 1 which you may consider ascending while -1 can be descending.
+* **sortable\(\)** - Marks the column as sortable. This will make the header clickable. On click the table will emit Vue event with the name of **"modular-table-sort"** which carries a payload with the info of the sorting in the following format: `{ direction: sortingDirection, field: nameOfTheSortedField }` On the first click the direction is 1 which you may consider ascending while -1 can be descending.
 
 ```js
 {

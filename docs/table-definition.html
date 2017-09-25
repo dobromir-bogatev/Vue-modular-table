@@ -220,7 +220,7 @@
 <pre><code class="lang-js"><span class="hljs-keyword">let</span> myTableDefinition = <span class="hljs-keyword">new</span> TableDefinition();
 </code></pre>
 <ul>
-<li><strong>addColumn (columnConfig) - </strong>pretty straight forward, it adds a column to our table. Whats more interesting is the column config or more generally the config properties.</li>
+<li><strong>addColumn (columnConfig)</strong> - pretty straight forward, it adds a column to our table. Whats more interesting is the column config or more generally the config properties.</li>
 </ul>
 <h4 id="config-properties">Config properties</h4>
 <p>The config properties, like columnConfig above, allow us to keep the definition explicit and clean. In the place of a config property an ES6 arrow function should be passed and in it you chain further definition. For example:</p>
@@ -231,10 +231,10 @@
 <h3 id="table-column">Table column</h3>
 <p>The table column much like the class instance has only one method.</p>
 <ul>
-<li><strong>addField(dataProperty, title, fieldConfig) - </strong>the method adds a field to every cell in the column and defines the title displayed in the header.<ul>
-<li><strong>dataProperty -</strong> The data&apos;s property name that you wish to be displayed in this field. It is mandatory.</li>
-<li><strong>title - </strong>The title of your column. It can be anything and it will be displayed as the column header. It is not mandatory. If you leave it empty the header of the column will be empty.</li>
-<li><strong>fieldConfig - </strong>Allows you to further define the field. Read more about the config properties above. </li>
+<li><strong>addField(dataProperty, title, fieldConfig)</strong> - the method adds a field to every cell in the column and defines the title displayed in the header.<ul>
+<li><strong>dataProperty</strong> - The data&apos;s property name that you wish to be displayed in this field. It is mandatory.</li>
+<li><strong>title</strong> - The title of your column. It can be anything and it will be displayed as the column header. It is not mandatory. If you leave it empty the header of the column will be empty.</li>
+<li><strong>fieldConfig</strong> - Allows you to further define the field. Read more about the config properties above.</li>
 <li><strong>Function overloads: addField(dataProperty), addField(dataProperty, fieldConfig)</strong></li>
 </ul>
 </li>
@@ -249,7 +249,7 @@
 <h3 id="table-field">Table field</h3>
 <p>The table field is the place that we can modify our table the most. When you apply a method on a field, make note that a field figurates in every cell in its column.</p>
 <ul>
-<li><strong>class(classList) - </strong>With this method you can attach your CSS classes. You can can pass them as array or simply with comma.</li>
+<li><strong>class(classList)</strong> - With this method you can attach your CSS classes. You can can pass them as array or simply with comma.</li>
 </ul>
 <pre><code class="lang-js">myTableDefinition
     .addColumn(column =&gt; column
@@ -257,7 +257,7 @@
             .class(<span class="hljs-string">&apos;is-primary&apos;</span>, <span class="hljs-string">&apos;bg-dark&apos;</span>)));
 </code></pre>
 <ul>
-<li><strong>formatter(formatter) </strong>and <strong>titleFormatter(formatter) -</strong> Through this method you can modify the fields further. You can use regular or arrow function as a formatter. You can add HTML that will render as well. <strong>formatter </strong>will format the fields in the column. <strong>titleFormatter </strong>will format the header of the column.</li>
+<li><strong>formatter(formatter)</strong> and <strong>titleFormatter(formatter)</strong> -  Through this method you can modify the fields further. You can use regular or arrow function as a formatter. You can add HTML that will render as well. <strong>formatter</strong> will format the fields in the column. <strong>titleFormatter</strong> will format the header of the column.</li>
 </ul>
 <pre><code class="lang-js">myTableDefinition
     .addColumn(column =&gt; column
@@ -266,9 +266,9 @@
 </code></pre>
 <p><em>Note: We added a small library with general formatters that are used often. Look at the chapter <strong>Formatters </strong>for more information</em>.</p>
 <ul>
-<li><p><strong>nullOrUndefinedDisplayValue(value) - </strong>If <strong>null </strong>or <strong>undefined </strong>results appear in your data and you don&apos;t want your table to display them just like that, you can set the value for these results. For example <em>&quot;No information&quot; instead of just </em>&quot;null&quot;.</p>
+<li><p><strong>nullOrUndefinedDisplayValue(value)</strong> - If <strong>null</strong> or <strong>undefined</strong> results appear in your data and you don&apos;t want your table to display them just like that, you can set the value for these results. For example <em>&quot;No information&quot;</em> instead of just <em>&quot;null&quot;</em>.</p>
 </li>
-<li><p><strong>sortable() - </strong>Marks the column as sortable. This will make the header clickable. On click the table will emit Vue event with the name of <strong>&quot;modular-table-sort&quot; </strong>which carries a payload with the info of the sorting in the following format:<code>{ direction: sortingDirection, field: nameOfTheSortedField }</code>On the first click the direction is 1 which you may consider ascending while -1 can be descending.</p>
+<li><p><strong>sortable()</strong> - Marks the column as sortable. This will make the header clickable. On click the table will emit Vue event with the name of <strong>&quot;modular-table-sort&quot;</strong> which carries a payload with the info of the sorting in the following format: <code>{ direction: sortingDirection, field: nameOfTheSortedField }</code> On the first click the direction is 1 which you may consider ascending while -1 can be descending.</p>
 </li>
 </ul>
 <pre><code class="lang-js">{
@@ -339,7 +339,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Table Definition","level":"1.3","depth":1,"next":{"title":"Formatters","level":"1.4","depth":1,"path":"formatters.md","ref":"formatters.md","articles":[]},"previous":{"title":"Getting started","level":"1.2","depth":1,"path":"getting-started.md","ref":"getting-started.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-vuejs@git+https://github.com/pearofducks/gitbook-plugin-theme-vuejs.git","-fontsettings","github","livereload"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/eCollect/vue-modular-table/"},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-vuejs":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"3.x.x"},"file":{"path":"table-definition.md","mtime":"2017-09-20T12:47:51.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-21T09:32:02.105Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Table Definition","level":"1.3","depth":1,"next":{"title":"Formatters","level":"1.4","depth":1,"path":"formatters.md","ref":"formatters.md","articles":[]},"previous":{"title":"Getting started","level":"1.2","depth":1,"path":"getting-started.md","ref":"getting-started.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-vuejs@git+https://github.com/pearofducks/gitbook-plugin-theme-vuejs.git","-fontsettings","github","livereload"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/eCollect/vue-modular-table/"},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-vuejs":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"3.x.x"},"file":{"path":"table-definition.md","mtime":"2017-09-25T13:37:44.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-25T13:38:07.083Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

@@ -222,7 +222,7 @@
 </code></pre>
 <h3 id="basic">Basic</h3>
 <ul>
-<li><strong>data </strong>-<strong> </strong>One of the mandatory props of the table. Simply the data you want the table to display. <strong>Type: </strong>Array consisting normal or JSON objects.</li>
+<li><strong>data</strong>- One of the mandatory props of the table. Simply the data you want the table to display. <strong>Type: Array</strong> consisting normal or JSON objects.</li>
 </ul>
 <pre><code class="lang-js">[
     {
@@ -243,8 +243,8 @@
 ]
 </code></pre>
 <ul>
-<li><strong>definition</strong> - The definition of how your table made with the TableDefinition class. For more detailed information look up the <strong>Table Definition </strong>chapter in which it is explained in detail how to define your table. <strong>Type: </strong>TableDefinition</li>
-<li><strong>sorting</strong> - The sorting information of the table. First you need to mark a column as sortable through the TableDefinition and then you need to bind this property so the table can update its sorting information. <strong>Type: </strong>Object</li>
+<li><strong>definition</strong> - The definition of how your table made with the TableDefinition class. For more detailed information look up the <strong>Table Definition</strong> chapter in which it is explained in detail how to define your table. <strong>Type: TableDefinition</strong></li>
+<li><strong>sorting</strong> - The sorting information of the table. First you need to mark a column as sortable through the TableDefinition and then you need to bind this property so the table can update its sorting information. <strong>Type: Object</strong></li>
 </ul>
 <pre><code class="lang-js">{
     direction: <span class="hljs-number">1</span>,
@@ -252,37 +252,47 @@
 }
 </code></pre>
 <p><em>Note: Where direction 1 is ascending and -1 is descending. Vue-modular-table&apos;s sorting does not yet support multi-sorting so the sorting object always contains one field and direction.</em></p>
+<ul>
+<li><strong>sortIcons</strong> - By default the table will use the basic unicode arrow icons: &#x2195; &#x2191; &#x2193;. Through the property <strong>sortIcons</strong> you can pass your preferred icons that will appear when a field is being sorted. <strong>Type: Object</strong>
+  The object should have the keys <strong>&quot;asc&quot;</strong> for ascending, <strong>&quot;desc&quot;</strong> for descending and <strong>&quot;none&quot;</strong> for when the column is not sorted, but indicates that it can be sorted. The following example shows how you can use font-awesome icons instead of the default unicode arrows.<pre><code class="lang-js">{
+  asc: <span class="hljs-string">&apos;&lt;i class=&quot;fa fa-sort-up&quot;&gt;&lt;/i&gt;&apos;</span>,
+  desc: <span class="hljs-string">&apos;&lt;i class=&quot;fa fa-sort-down&quot;&gt;&lt;/i&gt;&apos;</span>,
+  none: <span class="hljs-string">&apos;&lt;i class=&quot;fa fa-sort&quot;&gt;&lt;/i&gt;&apos;</span>,
+}
+</code></pre>
+</li>
+</ul>
 <h3 id="responsiveness">Responsiveness</h3>
 <p>The table supports basic responsiveness for mobile devices. If it switches to mobile mode the column headers disappear and the header is added before every field.</p>
 <p><img src="assets/VueModularTableMobile.png" alt=""></p>
 <p>The switch to mobile view depends on two properties:</p>
 <ul>
-<li><strong>device</strong><em><strong> </strong>- </em><strong>Type: </strong>Number. The number represents the current device that the table is displayed on. Usually going from 0 - Mobile, 1 - Tablet and so on. If you plan on using the mobile version of the table you should bind this property with dynamic variable that changes as the screens size changes</li>
-<li><strong>mobileViewThreshold - Type: </strong>Number. Defines from which number below the normal view will be changed to mobile view. The <strong>default </strong>is 0 which means that only if <strong>device </strong>is 0 the mobile view is triggered.</li>
+<li><strong>device - Type: Number</strong>. The number represents the current device that the table is displayed on. Usually going from 0 - Mobile, 1 - Tablet and so on. If you plan on using the mobile version of the table you should bind this property with dynamic variable that changes as the screens size changes</li>
+<li><strong>mobileViewThreshold - Type: Number</strong>. Defines from which number below the normal view will be changed to mobile view. The <strong>default</strong> is 0 which means that only if <strong>device</strong> is 0 the mobile view is triggered.</li>
 </ul>
 <h3 id="loader">Loader</h3>
-<p>Vue-modular-table provides a simple loader with debouncing logic. The loader is also a slot and can be changed at your discretion. Read more about <strong>slots </strong>later in this chapter</p>
+<p>Vue-modular-table provides a simple loader with debouncing logic. The loader is also a slot and can be changed at your discretion. Read more about <strong>slots</strong> later in this chapter</p>
 <ul>
-<li><strong>isLoading - Type: </strong>Boolean. Bind this property to variable that changes to <em>true</em> when the request is waiting for response and comes back to _false<strong> </strong>_after.</li>
-<li><strong>loaderWaitTime - Type: </strong>Number representing milliseconds. Here is the debouncing property through which you can change how much the loader should wait before it appears. <strong>Default: </strong>250.</li>
+<li><strong>isLoading - Type: Boolean</strong>. Bind this property to variable that changes to <em>true</em> when the request is waiting for response and comes back to <em>false</em> after the request responds.</li>
+<li><strong>loaderWaitTime - Type: Number</strong> representing milliseconds. Here is the debouncing property through which you can change how much the loader should wait before it appears. <strong>Default:</strong> 250.</li>
 </ul>
 <h3 id="css-classes">CSS classes</h3>
 <p>In the table definition you can directly pass CSS classes and format the fields. Through these properties you can pass your classes to the table. The classes have default names and you can choose to write styles on the default classes or pass your prefered names. <strong>The type of all properties below is String.</strong></p>
 <ul>
-<li><strong>wrapperClass </strong>- Attaches to the div that is wrapping the table. <strong>Default: </strong>modular-table-wrapper.</li>
-<li><strong>tableClass - </strong>The normal view of the table. <strong>Default: </strong>modular-table.</li>
-<li><strong>tableMobileClass </strong>- The mobile view of the table. <strong>Default: </strong>modular-table-mobile</li>
-<li><strong>loaderClass </strong>- Attaches to the div responsible for the loading. You can also access the span inside. <strong>Default: </strong>loader</li>
+<li><strong>wrapperClass</strong> - Attaches to the div that is wrapping the table. <strong>Default:</strong> modular-table-wrapper.</li>
+<li><strong>tableClass</strong> - The normal view of the table. <strong>Default:</strong> modular-table.</li>
+<li><strong>tableMobileClass</strong> - The mobile view of the table. <strong>Default:</strong> modular-table-mobile</li>
+<li><strong>loaderClass</strong> - Attaches to the div responsible for the loading. You can also access the span inside. <strong>Default:</strong> loader</li>
 </ul>
 <h3 id="table-events">Table events</h3>
 <p>Vue components may emit events on which you can subscribe. Our table currently has only one event.</p>
 <ul>
-<li><strong>modular-table-sort </strong>- If in the definition a column is marked as sortable and the header is clicked, this event will fire. It will carry <strong>the sort object </strong>as a payload.</li>
+<li><strong>modular-table-sort</strong> - If in the definition a column is marked as sortable and the header is clicked, this event will fire. It will carry <strong>the sort object</strong> as a payload.</li>
 </ul>
 <h3 id="slots">Slots</h3>
 <p>Slots allow you to insert your pieces into a component. If you don&apos;t know how they work look up the documentation of Vue.</p>
 <ul>
-<li><strong>loader - </strong>Allows you to insert your own loader instead of the default one. Note that it is still dependent on <strong>isLoading </strong>property.</li>
+<li><strong>loader</strong> - Allows you to insert your own loader instead of the default one. Note that it is still dependent on <strong>isLoading</strong> property.</li>
 </ul>
 
                                 
@@ -327,7 +337,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Table Properties and functionality","level":"1.5","depth":1,"next":{"title":"Quick reference","level":"1.6","depth":1,"path":"quick-reference.md","ref":"quick-reference.md","articles":[]},"previous":{"title":"Formatters","level":"1.4","depth":1,"path":"formatters.md","ref":"formatters.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-vuejs@git+https://github.com/pearofducks/gitbook-plugin-theme-vuejs.git","-fontsettings","github","livereload"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/eCollect/vue-modular-table/"},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-vuejs":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"3.x.x"},"file":{"path":"table-properties-and-functionality.md","mtime":"2017-09-20T12:47:51.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-21T09:32:02.105Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Table Properties and functionality","level":"1.5","depth":1,"next":{"title":"Quick reference","level":"1.6","depth":1,"path":"quick-reference.md","ref":"quick-reference.md","articles":[]},"previous":{"title":"Formatters","level":"1.4","depth":1,"path":"formatters.md","ref":"formatters.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-vuejs@git+https://github.com/pearofducks/gitbook-plugin-theme-vuejs.git","-fontsettings","github","livereload"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/eCollect/vue-modular-table/"},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-vuejs":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"3.x.x"},"file":{"path":"table-properties-and-functionality.md","mtime":"2017-09-25T13:39:15.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-25T13:38:07.083Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
