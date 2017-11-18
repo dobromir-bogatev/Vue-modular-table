@@ -30,7 +30,7 @@
         <table :class="tableMobileClass" v-else>
             <tbody>
             <template v-for="row in data" @click="rowClick($event, row)">
-                <tr class="separator seperator-top"><td colspan="2"></td></tr>
+                <tr class="separator seperator-top"><th></th><td></td></tr>
                 <template v-for="col in definition.columns">
                     <tr>
                         <th>
@@ -52,7 +52,7 @@
                         </td>
                     </tr>
                 </template>
-                <tr class="separator seperator-bottom"><td colspan="2"></td></tr>
+                <tr class="separator seperator-bottom"><th></th><td></td></tr>
             </template>
             </tbody>
         </table>
