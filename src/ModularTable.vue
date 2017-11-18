@@ -29,27 +29,30 @@
         </table>
         <table :class="tableMobileClass" v-else>
             <tbody>
-            <tr v-for="row in data" @click="rowClick($event, row)">
+            <template v-for="row in data" @click="rowClick($event, row)">
                 <template v-for="col in definition.columns">
-                    <th>
-                        <field-header v-for="field in col.fields"
-                                      :key="field.path"
-                                      v-if="field.title"
-                                      :sorting="sorting"
-                                      :field="field"
-                                      @modular-table-sort="sortClick">
-                        </field-header>
-                    </th>
-                    <td>
-                        <slot :name="'col-'+col.name" :row="row" :col="col">
-                            <span v-for="field in col.fields"
-                                  :class="field.classList"
-                                  v-html="field.format(field._getValue(row), row)">
-                            </span>
-                        </slot>
-                    </td>
+                    <tr>
+                        <th>
+                            <field-header v-for="field in col.fields"
+                                          :key="field.path"
+                                          v-if="field.title"
+                                          :sorting="sorting"
+                                          :field="field"
+                                          @modular-table-sort="sortClick">
+                            </field-header>
+                        </th>
+                        <td>
+                            <slot :name="'col-'+col.name" :row="row" :col="col">
+                                <span v-for="field in col.fields"
+                                      :class="field.classList"
+                                      v-html="field.format(field._getValue(row), row)">
+                                </span>
+                            </slot>
+                        </td>
+                    </tr>
                 </template>
-            </tr>
+                <tr><td colspan="2" class="seperator"></td></tr>
+            </template>
             </tbody>
         </table>
         <slot name="loader" v-if="showLoader">
