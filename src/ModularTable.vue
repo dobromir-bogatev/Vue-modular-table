@@ -30,8 +30,8 @@
         <table :class="tableMobileClass" v-else>
             <tbody>
             <tr v-for="row in data" @click="rowClick($event, row)">
-                <td v-for="col in definition.columns">
-                    <slot :name="'col-'+col.name" :row="row" :col="col">
+                <template v-for="col in definition.columns">
+                    <th>
                         <field-header v-for="field in col.fields"
                                       :key="field.path"
                                       v-if="field.title"
@@ -39,12 +39,16 @@
                                       :field="field"
                                       @modular-table-sort="sortClick">
                         </field-header>
-                        <span v-for="field in col.fields"
-                              :class="field.classList"
-                              v-html="field.format(field._getValue(row), row)">
-                        </span>
-                    </slot>
-                </td>
+                    </th>
+                    <td>
+                        <slot :name="'col-'+col.name" :row="row" :col="col">
+                            <span v-for="field in col.fields"
+                                  :class="field.classList"
+                                  v-html="field.format(field._getValue(row), row)">
+                            </span>
+                        </slot>
+                    </td>
+                </template>
             </tr>
             </tbody>
         </table>
